@@ -1,18 +1,22 @@
-import { ModalComponent } from "@/app/components/ModalComponent";
 import { TableComponent } from "@/app/components/TableComponent";
-import ToastComponent from "@/app/components/ToastComponent";
+import { AlertDialog, Button, Flex } from "@radix-ui/themes";
 
 export default function Page() {
   return (
     <div>
       <TableComponent />
-      {/*<Center className="p-5">*/}
-      {/*  <ModalComponent />*/}
-      {/*</Center>*/}
-      {/*<Center className="p-5">*/}
-      {/*  <ToastComponent />*/}
-      {/*</Center>*/}
-      dashboard
+      <div className={"p-5 flex justify-center"}>
+        <AlertDialog.Root>
+          <AlertDialog.Trigger>
+            <Button color="yellow" variant={"soft"}>
+              Revoke access
+            </Button>
+          </AlertDialog.Trigger>
+          <AlertDialog.Content maxWidth="450px">
+            <TableComponent />
+          </AlertDialog.Content>
+        </AlertDialog.Root>
+      </div>
     </div>
   );
 }
